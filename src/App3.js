@@ -13,7 +13,29 @@ import {
   ThemeProvider
 } from "@material-ui/core/styles";
 
+// Icons
+import Favorite from "@material-ui/icons/Favorite";
+import DeleteForever from "@material-ui/icons/DeleteForever";
 // Sounds
+import like from "./sounds/state-change_confirm-up.wav";
+import open from "./sounds/mercha_tipcha.wav";
+import close from "./sounds/ui_unlock.wav";
+
+
+// import munach from "./sounds/mercha_tipcha.wav";
+// import kadma_vazla from "./sounds/mercha_tipcha.wav";
+// import zakef_gadol from "./sounds/mercha_tipcha.wav";
+// import revii from "./sounds/mercha_tipcha.wav";
+// import yetiv from "./sounds/mercha_tipcha.wav";
+// import sof_pasuk from "./sounds/mercha_tipcha.wav";
+// import psik from "./sounds/mercha_tipcha.wav";
+// import munach_zarka_segol from "./sounds/mercha_tipcha.wav";
+// import munach_zakef_katon from "./sounds/mercha_tipcha.wav";
+// import mercha_tipcha from "./sounds/mercha_tipcha.wav";
+// import etnachta from "./sounds/mercha_tipcha.wav";
+// import gershayim from "./sounds/mercha_tipcha.wav";
+// import mapach_pashta from "./sounds/mercha_tipcha.wav";
+// import darga_tvir from "./sounds/mercha_tipcha.wav";
 
 import munach from "./sounds/munach.wav";
 import kadma_vazla from "./sounds/kadma_vazla.wav";
@@ -101,125 +123,127 @@ export default function MaterialDesignSounds() {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
 
-        <ro>
-        קַדְמָ֨א מֻנַּ֣ח זַרְקָא֮ מֻנַּ֣ח סֶגּוֹל֒ מֻנַּ֣ח ׀ מֻנַּ֣ח רְבִ֗יע מַהְפַּ֤ך פַּשְׁטָא֙ זָקֵף־קָטָ֔ן זָקֵף־גָּד֕וֹל מֵרְכָ֥א טִפְּחָ֖א מֻנַּ֣ח אֶתְנַחְתָּ֑א פָּזֵ֡ר תְּלִישָא־קְטַנָּה֩ תְּ֠לִישָא גְדוֹלָה קַדְמָ֨א וְאַזְלָ֜א אַזְלָא־גֵּ֜רֵשׁ גֵּרְשַׁ֞יִם דַּרְגָּ֧א תְּבִ֛יר יְ֚תִיב פְּסִיק׀ מֵרְכָ֥א טִפְּחָ֖א מֵרְכָ֥א סוֹף פָּסֽוּק׃ שַׁלְשֶׁ֓לֶת מֵרְכָא כְּפוּלָ֦ה יֵרֶח בֶּן יוֹמ֪וֹ קַרְנֵי פָרָ֟ה׃
-        </ro>
-
         <div className={classes.container}>
           
-          <ro
+          <Button
+            variant="contained"
             onClick={() => playSound(mercha_tipcha_audio)}
           >
             מֵרְכָ֥א טִפְחָ֖א
             Mercha Tipcha
-          </ro>
-          <ro
-            onClick={() => playSound(mercha_tipcha_audio)}
-          >
-            מֵרְכָ֥א טִפְחָ֖א
-            Mercha Tipcha
-          </ro>
+          </Button>
         </div>
 
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(munach_audio)}
           >
             מֻנַּ֣ח
             Munach
-          </ro>
+          </Button>
         </div>
 
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(munach_zakef_katon_audio)}
           >
          מֻנַּ֣ח זָקֵף קָטָ֔ן
           Munach Zakef Katon
-          </ro>
+          </Button>
         </div>
 
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(sof_pasuk_audio)}
           >
          סוֹף פָּסֽוּק
         Sof Pasuk
-          </ro>
+          </Button>
         </div>
 
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             fontSize="large" 
             onClick={() => playSound(etnachta_audio)}
           >
             אֶתְנַחְתָּ֑א 
             Etnachta
-          </ro>
+          </Button>
         </div>
 
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(zakef_gadol_audio)}
           >
             זָקֵף גָּד֕וֹל
             Zakef Gadol
-          </ro>
+          </Button>
         </div>
 
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(revii_audio)}
           >
             רְבִ֗יע
             Reviyi
-          </ro>
+          </Button>
         </div>
 
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(gershayim_audio)}
           >
             גֵּרְשַׁ֞יִם 
             Gershayim
-          </ro>
+          </Button>
         </div>
 
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(mapach_pashta_audio)}
           >
             מַהְפַּ֤ך פַּשְׁטָא֙ 
             Mapach Pashta
-          </ro>
+          </Button>
         </div>
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(yetiv_audio)}
           >
             יְ֚תִיב 
             Yetiv
-          </ro>
+          </Button>
         </div>
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(munach_zarka_segol_audio)}
           >
              מֻנַּ֣ח זַרְקָא֮ מֻנַּ֣ח סֶגּוֹל֒   
-          </ro>
+          </Button>
         </div>
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             size="large"
             font-size="10vw"
@@ -227,35 +251,38 @@ export default function MaterialDesignSounds() {
           >
             דַּרְגָּ֧א תְּבִ֛יר  
             Darga Tivir
-          </ro>
+          </Button>
         </div>
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             size="large"
             onClick={() => playSound(psik_audio)}
           >
             פָּסֵ֣ק׀
             Piseek
-          </ro>
+          </Button>
         </div>
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             size="large"
             onClick={() => playSound(pazer_audio)}
           >
             פָּזֵ֡ר
             Pazer
-          </ro>
+          </Button>
         </div>
         <div className={classes.container}>
-          <ro
+          <Button
+            variant="contained"
             color="primary"
             onClick={() => playSound(sof_aliya_audio)}
           >
             Sof Aliyah
-          </ro>
+          </Button>
         </div>
 {/* 
         <div className={classes.container}>
