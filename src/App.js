@@ -19,35 +19,35 @@ import open from "./sounds/mercha_tipcha.wav";
 import close from "./sounds/ui_unlock.wav";
 
 
-import munach from "./sounds/mercha_tipcha.wav";
-import kadma_vazla from "./sounds/mercha_tipcha.wav";
-import zakef_gadol from "./sounds/mercha_tipcha.wav";
-import revii from "./sounds/mercha_tipcha.wav";
-import yetiv from "./sounds/mercha_tipcha.wav";
-import sof_pasuk from "./sounds/mercha_tipcha.wav";
-import psik from "./sounds/mercha_tipcha.wav";
-import munach_zarka_segol from "./sounds/mercha_tipcha.wav";
-import munach_zakef_katon from "./sounds/mercha_tipcha.wav";
-import mercha_tipcha from "./sounds/mercha_tipcha.wav";
-import etnachta from "./sounds/mercha_tipcha.wav";
-import gershayim from "./sounds/mercha_tipcha.wav";
-import mapach_pashta from "./sounds/mercha_tipcha.wav";
-import darga_tvir from "./sounds/mercha_tipcha.wav";
-
-// import munach from "./sounds/munach.wav";
-// import kadma_vazla from "./sounds/kadma_vazla.wav";
-// import zakef_gadol from "./sounds/zakef_gadol.wav";
-// import revii from "./sounds/revii.wav";
-// import yetiv from "./sounds/yetiv.wav";
-// import sof_pasuk from "./sounds/sof_pasuk.wav";
-// import psik from "./sounds/psik.wav";
-// import munach_zarka_segol from "./sounds/munach_zarka_segol.wav";
-// import munach_zakef_katon from "./sounds/munach_zakef_katon.wav";
+// import munach from "./sounds/mercha_tipcha.wav";
+// import kadma_vazla from "./sounds/mercha_tipcha.wav";
+// import zakef_gadol from "./sounds/mercha_tipcha.wav";
+// import revii from "./sounds/mercha_tipcha.wav";
+// import yetiv from "./sounds/mercha_tipcha.wav";
+// import sof_pasuk from "./sounds/mercha_tipcha.wav";
+// import psik from "./sounds/mercha_tipcha.wav";
+// import munach_zarka_segol from "./sounds/mercha_tipcha.wav";
+// import munach_zakef_katon from "./sounds/mercha_tipcha.wav";
 // import mercha_tipcha from "./sounds/mercha_tipcha.wav";
-// import etnachta from "./sounds/etnachta.wav";
-// import gershayim from "./sounds/gershayim.wav";
-// import mapach_pashta from "./sounds/mapach_pashta.wav";
-// import darga_tvir from "./sounds/darga_tvir.wav";
+// import etnachta from "./sounds/mercha_tipcha.wav";
+// import gershayim from "./sounds/mercha_tipcha.wav";
+// import mapach_pashta from "./sounds/mercha_tipcha.wav";
+// import darga_tvir from "./sounds/mercha_tipcha.wav";
+
+import munach from "./sounds/munach.wav";
+import kadma_vazla from "./sounds/kadma_vazla.wav";
+import zakef_gadol from "./sounds/zakef_gadol.wav";
+import revii from "./sounds/revii.wav";
+import yetiv from "./sounds/yetiv.wav";
+import sof_pasuk from "./sounds/sof_pasuk.wav";
+import psik from "./sounds/psik.wav";
+import munach_zarka_segol from "./sounds/munach_zarka_segol.wav";
+import munach_zakef_katon from "./sounds/munach_zakef_katon.wav";
+import mercha_tipcha from "./sounds/mercha_tipcha.wav";
+import etnachta from "./sounds/etnachta.wav";
+import gershayim from "./sounds/gershayim.wav";
+import mapach_pashta from "./sounds/mapach_pashta.wav";
+import darga_tvir from "./sounds/darga_tvir.wav";
 
 import slide from "./sounds/navigation_hover-tap.wav";
 
