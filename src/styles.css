@@ -9,7 +9,19 @@
     text-align: center;
     font-size: 10hw;
   }
-  
+
+  parsha {
+    background-color: #c9ad7a; 
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
   ro {
     background-color: #4CAF50; /* Green */
     border: none;
@@ -120,6 +132,16 @@ ro .etnachta_e {
 ro:active .etnachta_h {
     display:none;
 }
+ro:active .munach_etnachta_e {
+    transition: 10s ease;
+    display:inline;
+}
+ro .munach_etnachta_e {
+    display:none;
+}
+ro:active .munach_etnachta_h {
+    display:none;
+}
 ro:active .zakef_gadol_e {
     transition: 10s ease;
     display:inline;
@@ -130,14 +152,14 @@ ro .zakef_gadol_e {
 ro:active .zakef_gadol_h {
     display:none;
 }
-ro:active .reviyi_e {
+ro:active .munach_revii_e {
     transition: 10s ease;
     display:inline;
 }
-ro .reviyi_e {
+ro .munach_revii_e {
     display:none;
 }
-ro:active .reviyi_h {
+ro:active .munach_revii_h {
     display:none;
 }
 ro:active .gershayim_e {
@@ -208,5 +230,15 @@ ro .pazer_e {
     display:none;
 }
 ro:active .pazer_h {
+    display:none;
+}
+ro:active .pashta_e {
+    transition: 10s ease;
+    display:inline;
+}
+ro .pashta_e {
+    display:none;
+}
+ro:active .pashta_h {
     display:none;
 }

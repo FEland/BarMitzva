@@ -1,4 +1,6 @@
 import React, { useState } from 'react'; 
+import tikkun from './tikkun.png'; // Tell webpack this JS file uses this image
+
 // Components
 import Button from "@material-ui/core/Button";
 
@@ -21,7 +23,7 @@ import Grid from '@material-ui/core/Grid';
 import munach from "./sounds/munach.wav";
 import kadma_vazla from "./sounds/kadma_vazla.wav";
 import zakef_gadol from "./sounds/zakef_gadol.wav";
-import revii from "./sounds/revii.wav";
+import munach_revii from "./sounds/munach_revii.wav";
 import yetiv from "./sounds/yetiv.wav";
 import sof_pasuk from "./sounds/sof_pasuk.wav";
 import psik from "./sounds/psik.wav";
@@ -29,6 +31,7 @@ import munach_zarka_segol from "./sounds/munach_zarka_segol.wav";
 import munach_zakef_katon from "./sounds/munach_zakef_katon.wav";
 import mercha_tipcha from "./sounds/mercha_tipcha.wav";
 import etnachta from "./sounds/etnachta.wav";
+import munach_etnachta from "./sounds/munach_etnachta.wav";
 import gershayim from "./sounds/gershayim.wav";
 import mapach_pashta from "./sounds/mapach_pashta.wav";
 import darga_tvir from "./sounds/darga_tvir.wav";
@@ -37,6 +40,8 @@ import sof_aliya from "./sounds/sof_aliya.wav";
 import tlisha_gdola from "./sounds/tlisha_gdola.wav";
 import tlisha_ktana from "./sounds/tlisha_ktana.wav";
 import kadma from "./sounds/kadma.wav";
+import pashta from "./sounds/pashta.wav";
+
 
 const theme = createMuiTheme({
   palette: {
@@ -72,13 +77,14 @@ export default function MaterialDesignSounds() {
   const munach_audio = new Audio(munach);
   const kadma_vazla_audio = new Audio(kadma_vazla);
   const zakef_gadol_audio = new Audio(zakef_gadol);
-  const revii_audio = new Audio(revii);
+  const munach_revii_audio = new Audio(munach_revii);
   const yetiv_audio = new Audio(yetiv);
   const sof_pasuk_audio = new Audio(sof_pasuk);
   const psik_audio = new Audio(psik);
   const munach_zarka_segol_audio = new Audio(munach_zarka_segol);
   const munach_zakef_katon_audio = new Audio(munach_zakef_katon);
   const etnachta_audio = new Audio(etnachta);
+  const munach_etnachta_audio = new Audio(munach_etnachta);
   const gershayim_audio = new Audio(gershayim);
   const mapach_pashta_audio = new Audio(mapach_pashta);
   const darga_tvir_audio = new Audio(darga_tvir);
@@ -87,6 +93,8 @@ export default function MaterialDesignSounds() {
   const tlisha_gdola_audio = new Audio(tlisha_gdola);
   const tlisha_ktana_audio = new Audio(tlisha_ktana);
   const kadma_audio = new Audio(kadma);
+  const pashta_audio = new Audio(pashta);
+
 
   const playSound = audioFile => {
     audioFile.play();
@@ -95,14 +103,19 @@ export default function MaterialDesignSounds() {
   const classes = useStyles();
 
   return (
+
+
     <ThemeProvider theme={theme}>
+
       <div className={classes.root}>
         <Grid container spacing={3}>
 
-      <h2> Welcome Samuel to the Torah Trope Website!
-          Today is {new Date().toLocaleDateString()}.
-      </h2>
-        
+        <body>
+            Welcome Samuel to the Torah Trope Website for Ki Tavo!
+            Today is {new Date().toLocaleDateString()}.
+   
+        </body>
+
         Select any trope to hear the recording and transliteration.
         Pay special attention to the shapes of the tropes!
 
@@ -185,13 +198,36 @@ export default function MaterialDesignSounds() {
         <div className={classes.container}>
           <ro
             color="primary"
+            onClick={() => playSound(pashta_audio)}
+          >
+        <span class="pashta_e"> Pashta</span>
+        <span class="pashta_h"> פַּשְׁטָא֙ </span>
+
+          </ro>
+        </div>
+        <div className={classes.container}>
+          <ro
+            color="primary"
             onClick={() => playSound(sof_pasuk_audio)}
           >
         <span class="sof_pasuk_e"> Sof Pasuk</span>
-        <span class="sof_pasuk_h"> סוֹף פָּסֽוּק </span>
+        <span class="sof_pasuk_h"> : סוֹף פָּסֽוּק </span>
          
           </ro>
         </div>
+
+        <div className={classes.container}>
+          <ro
+            color="primary"
+            fontSize="large" 
+            onClick={() => playSound(munach_etnachta_audio)}
+          >
+           <span class="munach_etnachta_h"> מֻנַּ֣ח אֶתְנַחְתָּ֑א </span>
+           <span class="munach_etnachta_e">  Munach Etnachta </span>
+
+          </ro>
+        </div>
+
 
         <div className={classes.container}>
           <ro
@@ -220,10 +256,10 @@ export default function MaterialDesignSounds() {
         <div className={classes.container}>
           <ro
             color="primary"
-            onClick={() => playSound(revii_audio)}
+            onClick={() => playSound(munach_revii_audio)}
           >
-            <span class="reviyi_h">  רְבִ֗יע  </span>
-           <span class="reviyi_e">  Reviyi </span>
+            <span class="munach_revii_h">  מֻנַּ֣ח רְבִ֗יע  </span>
+           <span class="munach_revii_e">  Munach Reviyi </span>
         
           </ro>
         </div>
@@ -309,15 +345,31 @@ export default function MaterialDesignSounds() {
 
         </Grid>
 
-        <div>
+        <img src={tikkun} alt="tikkun" width="1000" height="800"/>;
+
+        <parsha> 
+
+           א וְהָיָה֙ כִּֽי־תָב֣וֹא אֶל־הָאָ֔רֶץ אֲשֶׁר֙ יְהוָ֣ה אֱלֹהֶ֔יךָ נֹתֵ֥ן לְךָ֖ נַֽחֲלָ֑ה וִֽירִשְׁתָּ֖הּ וְיָשַׁ֥בְתָּ בָּֽהּ׃
+           <div> ב וְלָֽקַחְתָּ֞ מֵֽרֵאשִׁ֣ית ׀ כָּל־פְּרִ֣י הָֽאֲדָמָ֗ה אֲשֶׁ֨ר תָּבִ֧יא מֵֽאַרְצְךָ֛ אֲשֶׁ֨ר יְהוָ֧ה אֱלֹהֶ֛יךָ נֹתֵ֥ן לָ֖ךְ וְשַׂמְתָּ֣ בַטֶּ֑נֶא וְהָֽלַכְתָּ֙ אֶל־הַמָּק֔וֹם אֲשֶׁ֤ר יִבְחַר֙ יְהוָ֣ה אֱלֹהֶ֔יךָ לְשַׁכֵּ֥ן שְׁמ֖וֹ שָֽׁם׃
+           </div><div> ג וּבָאתָ֙ אֶל־הַכֹּהֵ֔ן אֲשֶׁ֥ר יִֽהְיֶ֖ה בַּיָּמִ֣ים הָהֵ֑ם וְאָֽמַרְתָּ֣ אֵלָ֗יו הִגַּ֤דְתִּי הַיּוֹם֙ לַֽיהוָ֣ה אֱלֹהֶ֔יךָ כִּי־בָ֨אתִי֙ אֶל־הָאָ֔רֶץ אֲשֶׁ֨ר נִשְׁבַּ֧ע יְהוָ֛ה לַֽאֲבֹתֵ֖ינוּ לָ֥תֶת לָֽנוּ׃
+           </div><div> ד וְלָקַ֧ח הַכֹּהֵ֛ן הַטֶּ֖נֶא מִיָּדֶ֑ךָ וְהִ֨נִּיח֔וֹ לִפְנֵ֕י מִזְבַּ֖ח יְהוָ֥ה אֱלֹהֶֽיךָ׃
+           </div><div>  ה וְעָנִ֨יתָ וְאָֽמַרְתָּ֜ לִפְנֵ֣י ׀ יְהוָ֣ה אֱלֹהֶ֗יךָ אֲרַמִּי֙ אֹבֵ֣ד אָבִ֔י וַיֵּ֣רֶד מִצְרַ֔יְמָה וַיָּ֥גָר שָׁ֖ם בִּמְתֵ֣י מְעָ֑ט וַֽיְהִי־שָׁ֕ם לְג֥וֹי גָּד֖וֹל עָצ֥וּם וָרָֽב׃
+           </div><div> ו וַיָּרֵ֧עוּ אֹתָ֛נוּ הַמִּצְרִ֖ים וַיְעַנּ֑וּנוּ וַיִּתְּנ֥וּ עָלֵ֖ינוּ עֲבֹדָ֥ה קָשָֽׁה׃
+           </div><div> ז וַנִּצְעַ֕ק אֶל־יְהוָ֖ה אֱלֹהֵ֣י אֲבֹתֵ֑ינוּ וַיִּשְׁמַ֤ע יְהוָה֙ אֶת־קֹלֵ֔נוּ וַיַּ֧רְא אֶת־עָנְיֵ֛נוּ וְאֶת־עֲמָלֵ֖נוּ וְאֶת־לַֽחֲצֵֽנוּ׃
+           </div><div> ח וַיּֽוֹצִאֵ֤נוּ יְהוָה֙ מִמִּצְרַ֔יִם בְּיָ֤ד חֲזָקָה֙ וּבִזְרֹ֣עַ נְטוּיָ֔ה וּבְמֹרָ֖א גָּדֹ֑ל וּבְאֹת֖וֹת וּבְמֹֽפְתִֽים׃
+           </div><div> ט וַיְבִאֵ֖נוּ אֶל־הַמָּק֣וֹם הַזֶּ֑ה וַיִּתֶּן־לָ֨נוּ֙ אֶת־הָאָ֣רֶץ הַזֹּ֔את אֶ֛רֶץ זָבַ֥ת חָלָ֖ב וּדְבָֽשׁ׃
+           </div><div>  י וְעַתָּ֗ה הִנֵּ֤ה הֵבֵ֨אתִי֙ אֶת־רֵאשִׁית֙ פְּרִ֣י הָֽאֲדָמָ֔ה אֲשֶׁר־נָתַ֥תָּה לִּ֖י יְהוָ֑ה וְהִנַּחְתּ֗וֹ לִפְנֵי֙ יְהוָ֣ה אֱלֹהֶ֔יךָ וְהִֽשְׁתַּחֲוִ֔יתָ לִפְנֵ֖י יְהוָ֥ה אֱלֹהֶֽיךָ׃
+           </div> יא וְשָֽׂמַחְתָּ֣ בְכָל־הַטּ֗וֹב אֲשֶׁ֧ר נָֽתַן־לְךָ֛ יְהוָ֥ה אֱלֹהֶ֖יךָ וּלְבֵיתֶ֑ךָ אַתָּה֙ וְהַלֵּוִ֔י וְהַגֵּ֖ר אֲשֶׁ֥ר בְּקִרְבֶּֽךָ׃
+       </parsha>
+
+
+
+       <div>
             -- Work In Progress -- from EFFIE
 
         </div>
-        <ro>
-        קַדְמָ֨א מֻנַּ֣ח זַרְקָא֮ מֻנַּ֣ח סֶגּוֹל֒ מֻנַּ֣ח ׀ מֻנַּ֣ח רְבִ֗יע מַהְפַּ֤ך פַּשְׁטָא֙ זָקֵף־קָטָ֔ן זָקֵף־גָּד֕וֹל מֵרְכָ֥א טִפְּחָ֖א מֻנַּ֣ח אֶתְנַחְתָּ֑א פָּזֵ֡ר תְּלִישָא־קְטַנָּה֩ תְּ֠לִישָא גְדוֹלָה קַדְמָ֨א וְאַזְלָ֜א אַזְלָא־גֵּ֜רֵשׁ גֵּרְשַׁ֞יִם דַּרְגָּ֧א תְּבִ֛יר יְ֚תִיב פְּסִיק׀ מֵרְכָ֥א טִפְּחָ֖א מֵרְכָ֥א סוֹף פָּסֽוּק׃ שַׁלְשֶׁ֓לֶת מֵרְכָא כְּפוּלָ֦ה יֵרֶח בֶּן יוֹמ֪וֹ קַרְנֵי פָרָ֟ה׃
-        </ro>
-
       </div>
+
     </ThemeProvider>
   );
 }
