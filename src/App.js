@@ -99,10 +99,12 @@ export default function MaterialDesignSounds() {
       <div className={classes.root}>
         <Grid container spacing={3}>
 
-      <h2>It is {new Date().toLocaleTimeString()}.</h2>
-        <ro>
-        קַדְמָ֨א מֻנַּ֣ח זַרְקָא֮ מֻנַּ֣ח סֶגּוֹל֒ מֻנַּ֣ח ׀ מֻנַּ֣ח רְבִ֗יע מַהְפַּ֤ך פַּשְׁטָא֙ זָקֵף־קָטָ֔ן זָקֵף־גָּד֕וֹל מֵרְכָ֥א טִפְּחָ֖א מֻנַּ֣ח אֶתְנַחְתָּ֑א פָּזֵ֡ר תְּלִישָא־קְטַנָּה֩ תְּ֠לִישָא גְדוֹלָה קַדְמָ֨א וְאַזְלָ֜א אַזְלָא־גֵּ֜רֵשׁ גֵּרְשַׁ֞יִם דַּרְגָּ֧א תְּבִ֛יר יְ֚תִיב פְּסִיק׀ מֵרְכָ֥א טִפְּחָ֖א מֵרְכָ֥א סוֹף פָּסֽוּק׃ שַׁלְשֶׁ֓לֶת מֵרְכָא כְּפוּלָ֦ה יֵרֶח בֶּן יוֹמ֪וֹ קַרְנֵי פָרָ֟ה׃
-        </ro>
+      <h2> Welcome Samuel to the Torah Trope Website!
+          Today is {new Date().toLocaleDateString()}.
+      </h2>
+        
+        Select any trope to hear the recording and transliteration.
+        Pay special attention to the shapes of the tropes!
 
  
         <div className={classes.container}>
@@ -144,8 +146,6 @@ export default function MaterialDesignSounds() {
           >
         <span class="kadma_vazla_e">Kadma V'azala</span>
         <span class="kadma_vazla_h"> קַדְמָ֨א וְאַזְלָא֜ </span>
-
-        קַדְמָ֨א וְאַזְלָא֜
           </ro>
         </div>
 
@@ -187,8 +187,9 @@ export default function MaterialDesignSounds() {
             color="primary"
             onClick={() => playSound(sof_pasuk_audio)}
           >
-         סוֹף פָּסֽוּק
-        Sof Pasuk
+        <span class="sof_pasuk_e"> Sof Pasuk</span>
+        <span class="sof_pasuk_h"> סוֹף פָּסֽוּק </span>
+         
           </ro>
         </div>
 
@@ -198,8 +199,9 @@ export default function MaterialDesignSounds() {
             fontSize="large" 
             onClick={() => playSound(etnachta_audio)}
           >
-            אֶתְנַחְתָּ֑א 
-            Etnachta
+           <span class="etnachta_h">  אֶתְנַחְתָּ֑א </span>
+           <span class="etnachta_e">  Etnachta </span>
+
           </ro>
         </div>
 
@@ -208,8 +210,10 @@ export default function MaterialDesignSounds() {
             color="primary"
             onClick={() => playSound(zakef_gadol_audio)}
           >
-            זָקֵף גָּד֕וֹל
-            Zakef Gadol
+           <span class="zakef_gadol_h">  זָקֵף גָּד֕וֹל </span>
+           <span class="zakef_gadol_e">  Zakef Gadol </span>
+            
+            
           </ro>
         </div>
 
@@ -218,8 +222,9 @@ export default function MaterialDesignSounds() {
             color="primary"
             onClick={() => playSound(revii_audio)}
           >
-            רְבִ֗יע
-            Reviyi
+            <span class="reviyi_h">  רְבִ֗יע  </span>
+           <span class="reviyi_e">  Reviyi </span>
+        
           </ro>
         </div>
 
@@ -228,8 +233,9 @@ export default function MaterialDesignSounds() {
             color="primary"
             onClick={() => playSound(gershayim_audio)}
           >
-            גֵּרְשַׁ֞יִם 
-            Gershayim
+                 <span class="gershayim_h">  גֵּרְשַׁ֞יִם   </span>
+           <span class="gershayim_e">  Gershayim </span>
+         
           </ro>
         </div>
 
@@ -238,8 +244,9 @@ export default function MaterialDesignSounds() {
             color="primary"
             onClick={() => playSound(mapach_pashta_audio)}
           >
-            מַהְפַּ֤ך פַּשְׁטָא֙ 
-            Mapach Pashta
+         <span class="mapach_pashta_h">   מַהְפַּ֤ך פַּשְׁטָא֙    </span>
+           <span class="mapach_pashta_e">  Mapach Pashta </span>
+         
           </ro>
         </div>
         <div className={classes.container}>
@@ -247,8 +254,8 @@ export default function MaterialDesignSounds() {
             color="primary"
             onClick={() => playSound(yetiv_audio)}
           >
-            יְ֚תִיב 
-            Yetiv
+            <span class="yetiv_h">  יְ֚תִיב   </span>
+           <span class="yetiv_e">  Yetiv </span>
           </ro>
         </div>
         <div className={classes.container}>
@@ -256,18 +263,19 @@ export default function MaterialDesignSounds() {
             color="primary"
             onClick={() => playSound(munach_zarka_segol_audio)}
           >
-             מֻנַּ֣ח זַרְקָא֮ מֻנַּ֣ח סֶגּוֹל֒   
+            <span class="munach_zarka_segol_h">  מֻנַּ֣ח זַרְקָא֮ מֻנַּ֣ח סֶגּוֹל֒    </span>
+           <span class="munach_zarka_segol_e">  Munach Zarka Munach Segol </span>
+               
           </ro>
         </div>
         <div className={classes.container}>
           <ro
             color="primary"
             size="large"
-            font-size="10vw"
             onClick={() => playSound(darga_tvir_audio)}
           >
-            דַּרְגָּ֧א תְּבִ֛יר  
-            Darga Tivir
+         <span class="darga_tvir_h">   דַּרְגָּ֧א תְּבִ֛יר   </span>
+           <span class="darga_tvir_e">  Darga Tvir </span>
           </ro>
         </div>
         <div className={classes.container}>
@@ -276,9 +284,9 @@ export default function MaterialDesignSounds() {
             size="large"
             onClick={() => playSound(psik_audio)}
           >
-            פָּסֵ֣ק׀
-            Piseek
-          </ro>
+            <span class="psik_h"> פָּסֵ֣ק׀   </span>
+           <span class="psik_e">  Pasek </span>
+           </ro>
         </div>
         <div className={classes.container}>
           <ro
@@ -286,8 +294,8 @@ export default function MaterialDesignSounds() {
             size="large"
             onClick={() => playSound(pazer_audio)}
           >
-            פָּזֵ֡ר
-            Pazer
+            <span class="pazer_h"> פָּזֵ֡ר   </span>
+           <span class="pazer_e">  Pazer </span>
           </ro>
         </div>
         <div className={classes.container}>
@@ -300,6 +308,14 @@ export default function MaterialDesignSounds() {
         </div>
 
         </Grid>
+
+        <div>
+            -- Work In Progress -- from EFFIE
+
+        </div>
+        <ro>
+        קַדְמָ֨א מֻנַּ֣ח זַרְקָא֮ מֻנַּ֣ח סֶגּוֹל֒ מֻנַּ֣ח ׀ מֻנַּ֣ח רְבִ֗יע מַהְפַּ֤ך פַּשְׁטָא֙ זָקֵף־קָטָ֔ן זָקֵף־גָּד֕וֹל מֵרְכָ֥א טִפְּחָ֖א מֻנַּ֣ח אֶתְנַחְתָּ֑א פָּזֵ֡ר תְּלִישָא־קְטַנָּה֩ תְּ֠לִישָא גְדוֹלָה קַדְמָ֨א וְאַזְלָ֜א אַזְלָא־גֵּ֜רֵשׁ גֵּרְשַׁ֞יִם דַּרְגָּ֧א תְּבִ֛יר יְ֚תִיב פְּסִיק׀ מֵרְכָ֥א טִפְּחָ֖א מֵרְכָ֥א סוֹף פָּסֽוּק׃ שַׁלְשֶׁ֓לֶת מֵרְכָא כְּפוּלָ֦ה יֵרֶח בֶּן יוֹמ֪וֹ קַרְנֵי פָרָ֟ה׃
+        </ro>
 
       </div>
     </ThemeProvider>
