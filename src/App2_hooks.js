@@ -13,9 +13,6 @@ import {
   ThemeProvider
 } from "@material-ui/core/styles";
 
-// import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
-
 // Sounds
 
 import munach from "./sounds/munach.wav";
@@ -34,9 +31,9 @@ import mapach_pashta from "./sounds/mapach_pashta.wav";
 import darga_tvir from "./sounds/darga_tvir.wav";
 import pazer from "./sounds/pazer.wav";
 import sof_aliya from "./sounds/sof_aliya.wav";
-import tlisha_gdola from "./sounds/tlisha_gdola.wav";
-import tlisha_ktana from "./sounds/tlisha_ktana.wav";
-import kadma from "./sounds/kadma.wav";
+
+import slide from "./sounds/navigation_hover-tap.wav";
+
 
 const theme = createMuiTheme({
   palette: {
@@ -51,18 +48,11 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles(() =>
   createStyles({
-    root: {
-        flexGrow: 1,
-    },
+    root: {},
     container: {
       padding: "20px",
       textAlign: "center"
     }
-    // paper: {
-    //     padding: theme.spacing(2),
-    //     textAlign: 'center',
-    //     color: theme.palette.text.secondary,
-    //   },
   })
 );
 
@@ -84,45 +74,74 @@ export default function MaterialDesignSounds() {
   const darga_tvir_audio = new Audio(darga_tvir);
   const pazer_audio = new Audio(pazer);
   const sof_aliya_audio = new Audio(sof_aliya);
-  const tlisha_gdola_audio = new Audio(tlisha_gdola);
-  const tlisha_ktana_audio = new Audio(tlisha_ktana);
-  const kadma_audio = new Audio(kadma);
+
+
+  const slideAudio = new Audio(slide);
 
   const playSound = audioFile => {
     audioFile.play();
   };
+
+  // const [state, setState] = React.useState({
+  //   checked: true
+  // });
+
+  // const toggleSwitch = name => event => {
+  //   if (event.target.checked) {
+  //     playSound(closeAudio);
+  //   } else {
+  //     playSound(openAudio);
+  //   }
+  //   setState({ ...state, [name]: event.target.checked });
+  // };
+
+
+  // const setState = React.useState({
+  //   clicked: true
+  // });
+  const [count, setCount] = useState();
+
+  
+  // const playSound = audioFile => {
+  //   audioFile.play();
+  // };
 
   const classes = useStyles();
 
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
-        <Grid container spacing={3}>
-
       <h2>It is {new Date().toLocaleTimeString()}.</h2>
         <ro>
         קַדְמָ֨א מֻנַּ֣ח זַרְקָא֮ מֻנַּ֣ח סֶגּוֹל֒ מֻנַּ֣ח ׀ מֻנַּ֣ח רְבִ֗יע מַהְפַּ֤ך פַּשְׁטָא֙ זָקֵף־קָטָ֔ן זָקֵף־גָּד֕וֹל מֵרְכָ֥א טִפְּחָ֖א מֻנַּ֣ח אֶתְנַחְתָּ֑א פָּזֵ֡ר תְּלִישָא־קְטַנָּה֩ תְּ֠לִישָא גְדוֹלָה קַדְמָ֨א וְאַזְלָ֜א אַזְלָא־גֵּ֜רֵשׁ גֵּרְשַׁ֞יִם דַּרְגָּ֧א תְּבִ֛יר יְ֚תִיב פְּסִיק׀ מֵרְכָ֥א טִפְּחָ֖א מֵרְכָ֥א סוֹף פָּסֽוּק׃ שַׁלְשֶׁ֓לֶת מֵרְכָא כְּפוּלָ֦ה יֵרֶח בֶּן יוֹמ֪וֹ קַרְנֵי פָרָ֟ה׃
         </ro>
 
- 
         <div className={classes.container}>
-        <ro
-          color="primary"
-          fontSize="large" 
-          onClick={() => playSound(mercha_tipcha_audio)}
-        >
-            <span class="mercha_tipcha_e">Mercha Tipcha</span>
-            <span class="mercha_tipcha_h">מֵרְכָ֥א טִפְחָ֖א</span>
-        </ro>
-      </div>
+          <ro
+            onClick={() => {playSound(mercha_tipcha_audio); 
+              setCount(!count);
+            }}
+          >
+             {/* {
+                React.state.clicked? 'First Text' : 'Second Text'
+              } */}
+            {/* מֵרְכָ֥א טִפְחָ֖א
+            Mercha Tipcha */}
+            {count? 'מֵרְכָ֥א טִפְחָ֖א' : 'Mercha Tipcha'}
+            {/* {this.state.count} */}
+          </ro>
+        </div>
 
         <div className={classes.container}>
           <ro
             color="primary"
-            onClick={() => playSound(munach_audio)}
-          >
-            <span class="munach_e">Munach</span>
-            <span class="munach_h">מֻנַּ֣ח</span>
+            onClick={() => {playSound(munach_audio); 
+              setCount(!count);
+            }}          >
+            {/* מֻנַּ֣ח
+            Munach */}
+            {count? 'מֻנַּ֣ח' : 'Munach'}
+
           </ro>
         </div>
 
@@ -131,54 +150,8 @@ export default function MaterialDesignSounds() {
             color="primary"
             onClick={() => playSound(munach_zakef_katon_audio)}
           >
-        <span class="munach_zakef_katon_e">Munach Zakef Katon</span>
-        <span class="munach_zakef_katon_h"> מֻנַּ֣ח זָקֵף קָטָ֔ן</span>
-
-          </ro>
-        </div>
-
-        <div className={classes.container}>
-          <ro
-            color="primary"
-            onClick={() => playSound(kadma_vazla_audio)}
-          >
-        <span class="kadma_vazla_e">Kadma V'azala</span>
-        <span class="kadma_vazla_h"> קַדְמָ֨א וְאַזְלָא֜ </span>
-
-        קַדְמָ֨א וְאַזְלָא֜
-          </ro>
-        </div>
-
-        <div className={classes.container}>
-          <ro
-            color="primary"
-            onClick={() => playSound(tlisha_ktana_audio)}
-          >
-        <span class="tlisha_ktana_e">Telisha Ketana</span>
-        <span class="tlisha_ktana_h"> תְּלִישָא קְטַנָּה֩ </span>
-
-          </ro>
-        </div>
-
-        <div className={classes.container}>
-          <ro
-            color="primary"
-            onClick={() => playSound(tlisha_gdola_audio)}
-          >
-        <span class="tlisha_gdola_e">Telisha Gedola</span>
-        <span class="tlisha_gdola_h">תְּ֠לִישָא גְדוֹלָה </span>
-
-          </ro>
-        </div>
-
-        <div className={classes.container}>
-          <ro
-            color="primary"
-            onClick={() => playSound(kadma_audio)}
-          >
-        <span class="kadma_e"> Kadma</span>
-        <span class="kadma_h"> קַדְמָ֨א </span>
-
+         מֻנַּ֣ח זָקֵף קָטָ֔ן
+          Munach Zakef Katon
           </ro>
         </div>
 
@@ -298,9 +271,21 @@ export default function MaterialDesignSounds() {
             Sof Aliyah
           </ro>
         </div>
+      {/* 
+        <div className={classes.container}>
+          <Switch checked={state.checked} onChange={toggleSwitch("checked")} />
+        </div> */}
 
-        </Grid>
-
+        {/* <div className={classes.container}>
+          <Slider
+            onChangeCommitted={() => playSound(slideAudio)}
+            defaultValue={3}
+            step={1}
+            marks
+            min={1}
+            max={10}
+          />
+        </div> */}
       </div>
     </ThemeProvider>
   );

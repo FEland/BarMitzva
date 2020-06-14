@@ -29,3 +29,44 @@ ro:active {
 ro:hover {
   background-color: black;
 }
+
+ro:hover .munach_h {
+  display:none;
+}
+ro .munach_e {
+  display:none;
+}
+ro:hover .munach_e {
+  transition: 10s ease;
+  display:inline;
+}
+
+ro:hover .munach_zakef_katon_h {
+  display:none;
+}
+ro .munach_zakef_katon_e {
+  display:none;
+}
+ro:hover .munach_zakef_katon_e {
+  display:inline;
+}
+
+ro:hover .mercha_tipcha_h {
+  display:none;
+}
+ro .mercha_tipcha_e {
+  display:none;
+}
+ro:hover .mercha_tipcha_e {
+  display:inline;
+}
+
+ro:hover .mapach_pashta_h {
+  display:none;
+}
+ro .mapach_pashta_e {
+  display:none;
+}
+ro:hover .mapach_pashta_e {
+  display:inline;
+}
