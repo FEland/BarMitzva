@@ -102,14 +102,19 @@
 
 
   player {
-    background-color: #62aaa1; 
-    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    /* margin: center; */
+    text-align: center;
+    background-color:#c9ad7a; 
     color: white;
     padding: 15px 32px;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
+    /* display: inline-block; */
+    font-size: 30px;
     font-family: 'Times New Roman', Times, serif;
   }
 

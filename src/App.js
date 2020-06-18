@@ -1,6 +1,4 @@
 import React from 'react'; 
-import tikkun_2 from './tikkun_2.png'; // Tell webpack this JS file uses this image
-import tikkun_3 from './tikkun_3.png'; // Tell webpack this JS file uses this image
 import master_tikkun from './master_tikkun2.png'; // Tell webpack this JS file uses this image
 
 // Styles
@@ -59,11 +57,6 @@ const useStyles = makeStyles(() =>
       padding: "20px",
       textAlign: "center"
     }
-    // paper: {
-    //     padding: theme.spacing(2),
-    //     textAlign: 'center',
-    //     color: theme.palette.text.secondary,
-    //   },
   })
 );
 
@@ -119,11 +112,36 @@ export default function MaterialDesignSounds() {
 
         </body>
 
+      <player>
+        <ul>
+              1st Aliya - 26:1-3 (Cohen)
+              <div className = "player-item">
+                <audio controls src="./sounds/aliya_1.mp3"> </audio>
+              </div>
+                2nd Aliya 26:4-9 (Levi)
+                <div className = "player-item">
+                  <audio
+                    controls
+                    src="./sounds/aliya_2.mp3">
+                </audio>
+                </div>
+                2nd Aliya 26:10-12 (Yisrael)
+                <div className = "player-item">
+                <audio
+                    controls
+                    src="./sounds/aliya_3.mp3">
+                </audio>
+                </div>
+            </ul>
+          </player>
         <div className={classes.container}>
           <p>
-        Press any trope to hear the recording and view transliteration.
-        Pay special attention to the shapes of the tropes!
+        --------------------------------------------------------------- <br></br>
+        Press any trope below to hear the recording and view transliteration. <br></br>
+        Pay special attention to the shapes of the tropes! <br></br>
+        ---------------------------------------------------------------
         </p>
+        <br></br>
         <ro
           color="primary"
           fontSize="large" 
@@ -347,27 +365,6 @@ export default function MaterialDesignSounds() {
         </div>
 
         </Grid>
-
-          <ul class='player'>
-              1st Aliya - 26:1-3 (Cohen)
-              <div className = "player-item">
-                <audio controls src="./sounds/aliya_1.mp3"> </audio>
-              </div>
-                2nd Aliya 26:4-9 (Levi)
-                <div className = "player-item">
-                  <audio
-                    controls
-                    src="./sounds/aliya_2.mp3">
-                </audio>
-                </div>
-                2nd Aliya 26:10-12 (Yisrael)
-                <div className = "player-item">
-                <audio
-                    controls
-                    src="./sounds/aliya_3.mp3">
-                </audio>
-                </div>
-            </ul>
           
           <parsha> 
 
