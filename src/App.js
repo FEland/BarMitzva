@@ -1,5 +1,6 @@
 import React from 'react'; 
 import master_tikkun from './master_tikkun2.png'; // Tell webpack this JS file uses this image
+import Countdown from './countdown'; // /** This countdown component is from https://medium.com/@kristin_baumann/react-countdown-6455838b6faf */
 
 // Styles
 import {
@@ -94,6 +95,7 @@ export default function MaterialDesignSounds() {
   return (
 
 
+
     <ThemeProvider theme={theme}>
 
       <div className={classes.root}>
@@ -102,15 +104,29 @@ export default function MaterialDesignSounds() {
         <Grid container spacing={3}>
 
         <body>
-            Welcome Samuel to the Torah Trope Website for Ki Tavo!
-            Today is {new Date().toLocaleDateString()}.
+            <strong> Welcome Samuel to your special Bar Mitzva practice Website!  </strong>
+            <br></br>
 
+           <Countdown date={'2020-09-05T09:00:00'} text='Ki Tavo Bar Mitzva Countdown' />
+
+
+
+{/* 
+            <img srcset="image-320w.jpg 320w,
+                        image-480w.jpg 480w,
+                        image-800w.jpg 800w"
+              sizes="(max-width: 320px) 300px,
+                      (max-width: 480px) 440px,
+                      800px"
+              src="image-800w.jpg" alt="Image"> */}
 
         <div class= "master_tikkun">
-          <img src={master_tikkun} alt="master_tikkun" width="2000" height="1000"/>
+          <img src={master_tikkun} alt="master_tikkun" loading="lazy" width="2000" height="1000"/>
         </div>
 
         </body>
+
+        
 
       <player>
         <ul>
@@ -125,7 +141,7 @@ export default function MaterialDesignSounds() {
                     src="./sounds/aliya_2.mp3">
                 </audio>
                 </div>
-                2nd Aliya 26:10-12 (Yisrael)
+                3rd Aliya 26:10-12 (Yisrael)
                 <div className = "player-item">
                 <audio
                     controls
