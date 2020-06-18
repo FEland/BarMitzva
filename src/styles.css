@@ -10,6 +10,84 @@
     font-size: 10hw;
   }
 
+ 
+.card-grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .3);
+    background-color: blue;
+    transform-style: preserve-3d;
+    transition: 150ms;
+    cursor: pointer;
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+  }
+  
+  .card:hover {
+    --translate-y: -2px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
+  }
+  
+  .card.flip {
+    --rotate-y: 180deg;
+  }
+  
+  .card .front {
+    left: 0;
+  }
+  
+  .card .front,
+  .card .back {
+    position: absolute;
+    padding: 1rem;
+    backface-visibility: hidden;
+  }
+  
+  .card .back {
+    transform: rotateY(180deg);
+  }
+  
+
+  img {
+    max-width: 100%;
+    height: auto;
+    position: right;
+    /* display: inline-block; */
+    float: right;
+    object-fit:scale-down
+
+    /* width: 200px;
+    height: 100px; */
+  }
+
+  .master_tikkun {
+    padding: 15px 32px;
+    height: auto;
+    max-width: 100%;
+    position: center;
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+
+  }
+
+  .card-options {
+    color: white;
+    white-space: break-word;
+    padding: 5px;
+    font-family: Arial;
+    text-align: center;
+  }
+
   parsha {
     background-color: #c9ad7a; 
     border: none;
@@ -18,9 +96,23 @@
     text-align: right;
     text-decoration: none;
     display: inline-block;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+
+  player {
+    background-color: #62aaa1; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
   }
+
 
   ro {
     background-color: #4CAF50; /* Green */
