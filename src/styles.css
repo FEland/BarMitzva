@@ -88,11 +88,12 @@
     text-align: center;
   }
 
-  parsha {
+  parsha_1 {
     background-color: #c9ad7a; 
     border: none;
     color: black;
     padding: 15px 32px;
+    width: 75%;
     text-align: right;
     text-decoration: none;
     display: inline-block;
@@ -100,6 +101,18 @@
     font-family: 'Times New Roman', Times, serif;
   }
 
+  parsha_2 {
+    background-color: #c9bd7a; 
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: left;
+    width: 75%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+  }
 
   player {
     display: block;
