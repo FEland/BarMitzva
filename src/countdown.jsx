@@ -1,7 +1,9 @@
-/** This countdown component is from https://medium.com/@kristin_baumann/react-countdown-6455838b6faf */
+/** This countdown component is adapted from https://medium.com/@kristin_baumann/react-countdown-6455838b6faf */
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import bm from './barmit.png'; // Tell webpack this JS file uses this image
+import { Link } from 'react-router-dom';
 
 /**
  * Note : 
@@ -88,10 +90,15 @@ class Countdown extends Component {
     
     return (
 
-      <div>
-        <h2>Parshat Ki Tavo - September 5th, 2020 - Countdown</h2>
-      <div className="Countdown">
+      <div style={{backgroundColor: 'gray', color: 'orange' }}> 
+        <Link to ='/'>
+          <img src={bm} alt="icon" loading="lazy" display="inline" width="50" height="50"/>
+        </Link>
+        Parshat Ki Tavo - September 5th, 2020 - Samuel Sult's Bar Mitzva 
+
+      <div className="Countdown"> 
         <span className="Countdown-col">
+          Official <br></br> Countdown
           <span className="Countdown-col-element">
               <strong>{this.addLeadingZeros(countDown.days)}</strong>
               <span>{countDown.days === 1 ? 'Day' : 'Days'}</span>
