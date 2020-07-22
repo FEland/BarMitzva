@@ -5,7 +5,6 @@ export default function master ( ) {
     return (
         <div >
 
-
         <parsha_1 style={{backgroundColor: 'orange', color: 'gray', 'font-size': '110%'}}> 
 
             א וְהָיָה֙ כִּֽי־תָב֣וֹא אֶל־הָאָ֔רֶץ אֲשֶׁר֙ יְהוָ֣ה אֱלֹהֶ֔יךָ נֹתֵ֥ן לְךָ֖ נַֽחֲלָ֑ה וִֽירִשְׁתָּ֖הּ וְיָשַׁ֥בְתָּ בָּֽהּ׃

@@ -5,6 +5,7 @@ import Flashcard from "./Flashcard";
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
       display: 'flex',
@@ -30,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
 export default function FlashcardList( { flashcards } ) {
 
     // const [filter, filtered] = setState(event.target.value)
+    let items = flashcards;
 
     const classes = useStyles();
 
-    let items = flashcards;
     // if (filter){
     //     items = items.filter( item =>
     //         item.id.toLowerCase()
@@ -43,7 +44,7 @@ export default function FlashcardList( { flashcards } ) {
     // editSearchTerm = (e) => {
     //     this.setState({searchTerm: e.target.value})
     //   }
-    
+
     // dynamicSearch = () => {
     //     return flashcards.filter(name => name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
     //   }
@@ -54,8 +55,8 @@ export default function FlashcardList( { flashcards } ) {
         
     <div>
          <div className={classes.root}>
-
-        {/* <input type="text" onChange={this.filtered.bind(this)}/> */}
+         
+        {/* <input type="text" onChange={this.filtered.bind(this)}/> */} 
 
       <Grid container spacing={3}> 
       {items.map(flashcard => {

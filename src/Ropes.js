@@ -1,6 +1,8 @@
 import React from 'react'; 
 import FlashcardList from "./FlashcardList";
 import {Samples} from './Tropes'
+import Quiz from "./Quiz";
+
 import {
     makeStyles,
     createStyles,
@@ -26,14 +28,14 @@ export default function Ropes ( ) {
     
     return (
         <div className={classes.root}>
+        <Quiz flashcards = {Samples} />
 
         <p>
-        --------------------------------------------------------------- <br></br>
-        Press any trope below to hear the recording and view transliteration. <br></br>
-        Pay special attention to the shapes of the tropes! <br></br>
-        ---------------------------------------------------------------
+        {/* --------------------------------------------------------------- <br></br> */}
+        Press any trope below to hear the recording and view transliteration <br></br>
+        {/* Pay special attention to the shapes of the tropes! <br></br> */}
+        {/* --------------------------------------------------------------- */}
         </p>
-
         <FlashcardList flashcards = {Samples} />
         </div>
     );
