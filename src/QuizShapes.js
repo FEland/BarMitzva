@@ -5,11 +5,7 @@ import PauseCircleFilled from '@material-ui/icons/PauseCircleFilled';
 import PlayCircleFilled from '@material-ui/icons/PlayCircleFilled';
 
 // import SpeedIcon from '@material-ui/icons/Speed';
-// import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
-
-// import SpeedDial from '@material-ui/lab/SpeedDial';
-// import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-// import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
+import DoubleArrowIcon from '@material-ui/icons/DoubleArrow';
 
 import CachedIcon from '@material-ui/icons/Cached';
 import Slider from '@material-ui/core/Slider';
@@ -26,13 +22,13 @@ import Slider from '@material-ui/core/Slider';
       return;
     }
     for (i = 0; i < num; i++){
-      songList.push(items[getRandomInt(0, items.length)]);
+      songList.push(items[getRandomInt(0, items.length-1)]);
     }
     return songList;
   }
 
   
-export default function Quiz( { flashcards } ) {
+export default function QuizShapes( { flashcards } ) {
 
     let audio = new Audio();
     // let fast = 1;
@@ -40,30 +36,26 @@ export default function Quiz( { flashcards } ) {
     const [flag, setFlag] = useState(1);
     const [trope, setTrope] = useState(0);
 
-    // const [speed, setSpeed] = useState(1);
+    const [speed, setSpeed] = useState(1);
 
-    // const handleSpeed = (val) => {
-    //     setSpeed(speed => val);
-    //   }
+    const handleSpeed = (val) => {
+        // setSpeed(speed => speed = val);
+        setSpeed(val);
+      }
   
       
     let i = -1;
     let myflag = 0;
-    var speed = 1;
+    // var speed = 1;
 
     function getSpeed(){
         return speed;
     }
 
     // const [count, setCount] = useState(0);
+    // const [yesQuiz, setQuizTrue] = useState(0);
 
-    // playFromSong
-    const playFromSong = index => {
-        // audio.src = "";
-        i = index;
-        setTrope(i);
-        playNext();
-    };
+
 
     function playNext (){
         // if (!myflag) printc("JACKSA");
@@ -104,6 +96,15 @@ export default function Quiz( { flashcards } ) {
         reloadQuiz(createQuiz(items, newValue))
     };
 
+    // playFromSong
+    const playFromSong = index => {
+        // audio.src = "";
+        i = index;
+        setTrope(i);
+        playNext();
+    };
+    //   const song =  new Audio(flashcard.sound)
+
     // function printc(calledBy){
     //     console.log(calledBy, "i= ", i, "myflag= ", myflag);
     //     // console.log(calledBy, "i= ", i, "myflag= ", myflag, " trope=", trope, "/", quiz.length, " flag=", flag);
@@ -121,31 +122,39 @@ export default function Quiz( { flashcards } ) {
 
     function handlePause(){
         myflag = 1;
-        audio.pause();
+        // audio.pause();
+        audio.pause()
+        audio.currentTime = 0
+        audio = null;
+
         // printc("handlePause after setFlag");
         setFlag(1);
         i = 0;
         setTrope(0);
 
-
     }
+    // function killAudio(){
+    //     audio.pause();
+    //     audio = null;
+    // }
 
 
     return (
+        
          <quiz>Quiz Yourself!
             <h5> 
 
-            <div className="controls">
+            <div className="controls" >
             
 
                 <Button variant="contained" color="primary"
                     endIcon={<CachedIcon  onClick={() =>  {reloadQuiz(createQuiz(items, value));}}/>}>
                 </Button> 
 
-                {/* <Button variant="contained" color="primary"
-                    startIcon = {<DoubleArrowIcon onChange={() => { handleSpeed(value) ;}} />}>
+                <Button variant="contained" color="primary"
+                    startIcon = {<DoubleArrowIcon onChange={() => { handleSpeed(2) ;}} />}>
                         {speed}
-                </Button>  */}
+                </Button> 
 
 
                 <Button size="small" variant="contained"> 
@@ -155,23 +164,27 @@ export default function Quiz( { flashcards } ) {
 
                 {/* only shows play or pause based off flag state.. flag doesn't work must be fixed! */}
                 {flag ?  <Button variant="contained" color="primary" 
-                    endIcon={<PlayCircleFilled onClick={() => {handlePlay()}}/>}>
+                    endIcon={<PlayCircleFilled onClick={() => handlePlay()}/>}>
                     </Button> :
                     <Button variant="contained" color="primary" 
-                        endIcon={<PauseCircleFilled onClick={() => {handlePause()}}/>}>
+                        endIcon={<PauseCircleFilled onClick={() => handlePause()}/>}>
                     </Button>
                 }
             </div>
 
             </h5>
 
-
-        <p>
+            <p>
         {quiz.map((songName, index)=> {return ( 
-           <i style={(trope === index) ? {color: 'black', dir: 'rtl'} : {color: 'yellow', dir: 'rtl'}} onClick={() => playFromSong(index-1)} >{songName.heb}</i>)})}
+            (trope === index) ?
+            <img src={songName.image} onClick={() => playFromSong(index-1)} alt="icon" loading="lazy" width="50" height="50" style={ {'opacity' : '.5'} }/>
+            :<img src={songName.image} onClick={() => playFromSong(index-1)} alt="icon" loading="lazy" width="50" height="50" style={  {'border' : '0px solid black'}  }/>
+
+           )})}
         </p>
 
            </quiz>
 
     )
 }
+

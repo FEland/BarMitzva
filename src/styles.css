@@ -23,6 +23,9 @@
     /* white-space: nowrap; */
     
   }
+  .Modal {
+    background-color: brown;
+  }
 
   quiz {
     border: 2px solid #e7e7e7;

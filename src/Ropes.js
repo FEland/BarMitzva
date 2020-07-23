@@ -1,7 +1,8 @@
 import React from 'react'; 
 import FlashcardList from "./FlashcardList";
 import {Samples} from './Tropes'
-import Quiz from "./Quiz";
+import SimpleModal from "./SimpleModal";
+import Grid from '@material-ui/core/Grid';
 
 import {
     makeStyles,
@@ -16,7 +17,14 @@ const useStyles = makeStyles(() =>
     container: {
       padding: "20px",
       textAlign: "center"
-    }
+    },
+    // grid: {
+    //   width: 500,
+    //   height: 450,
+    //   direction: "row",
+    //   justify: "center",
+    //   alignItems: "center",
+    // },
   })
 );
 
@@ -28,15 +36,22 @@ export default function Ropes ( ) {
     
     return (
         <div className={classes.root}>
-        <Quiz flashcards = {Samples} />
-
-        <p>
-        {/* --------------------------------------------------------------- <br></br> */}
-        Press any trope below to hear the recording and view transliteration <br></br>
-        {/* Pay special attention to the shapes of the tropes! <br></br> */}
-        {/* --------------------------------------------------------------- */}
-        </p>
+            <h5>Quiz Yourself
+                  <Grid container spacing={2} justify="center" alignItems="center"> 
+                    <Grid item  >
+                      <SimpleModal flashcards = {Samples} level = {false} name = 'Level 1'></SimpleModal>
+                    </Grid>
+                    <Grid item  >
+                      <SimpleModal flashcards = {Samples} level = {true} name = 'Level 2'></SimpleModal>
+                    </Grid>
+                  </Grid>
+            </h5> 
+        <h2>
+        Press any trope below to hear the recording and view transliteration
+        </h2>
         <FlashcardList flashcards = {Samples} />
+       
+
         </div>
     );
 }
