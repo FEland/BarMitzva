@@ -2,8 +2,8 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import bm from './barmit.png'; // Tell webpack this JS file uses this image
-import { Link } from 'react-router-dom';
+// import bm from './barmit.png'; // Tell webpack this JS file uses this image
+// import { Link } from 'react-router-dom';
 
 /**
  * Note : 
@@ -91,9 +91,7 @@ class Countdown extends Component {
     return (
 
       <div style={{backgroundColor: 'gray', color: 'orange' }}> 
-        <Link to ='/'>
-          <img src={bm} alt="icon" loading="lazy" display="inline" width="50" height="50"/>
-        </Link>
+
         Parshat Ki Tavo - September 5th, 2020 - Samuel Sult's Bar Mitzva 
 
       <div className="Countdown"> 

@@ -4,15 +4,45 @@
     /* font-family: url(/assets/fonts/ShlomosemiStam.ttf); */
     text-align: center; 
     overflow-x: auto;
+
+    /* font-size: 2vw; */
   }
+
+@keyframes slidein { from {margin-left: 100%; width: 200%;} to {margin-left: 0%; width: 80%; } }
 @font-face {
     font-family: "ShlomosemiStam";
     src: url(./fonts/ShlomoStam/ShlomoStam.ttf);
     
   }
+  div.lecture-cover {
+    /* border: 3px solid black; */
+        /* opacity: 0.5; */
+    background-color: black;
 
+    /* transition: opacity 1ms; */
+  }
+  div.lecture-cover :hover{
+    /* border: 3px solid green;
+    background-color: #a13b3b;
+    padding: 5px 15px; */
+     /* opacity: 1; */
+    opacity: 0.8;
+
+  }
+
+  .topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+  }
+  .topRight {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+  }
   body {
-    background-color:#2f92a8;
+    background-color:#03313b;
+    /* background-color:#2f92a8; */
     font-size: x-large;
     text-align: center;
     display: flex;  
@@ -29,16 +59,28 @@
 
   quiz {
     border: 2px solid #e7e7e7;
-    font-size: x-large;
-    font-family: 'ShlomosemiStam';
+    font-size: large;
     background-color: brown;
-    color: rgb(204, 204, 204);
+    color: rgb(196, 53, 53);
     position: center;
     margin: 5px auto;
     padding: 5px 32px;
     text-align: center;
     display: inline-block;
+    overflow-wrap: break-word;
+
   }
+
+frontpage {
+  
+  padding: 10px 10px;
+  position: center;
+  width: 80%;
+  background-color: brown;
+  display: inline-block; 
+  animation-duration: 2s;
+  animation-name: slidein;
+}
 
 @media screen and (max-width: 600px) {
     body{
@@ -63,29 +105,25 @@
     }
 }
   .MuiTabs-root{
-    font-size: x-small;
+    font-size: large;
     position: flex;
     /* align-items: stretch; */
-    border: 1px solid #e7e7e7;
+    border: 2px solid #e7e7e7;
     /* flex-direction: column; */
-    background-color: #c9ad7a;
+    /* background-color: #c9ad7a; */
+    background-color: rgb(151, 155, 137);
+    /* color: black; */
     /* position: sticky;
     position: -webkit-sticky;
     top: 0; */
   }
-
- .MuiTab-root :hover {
-    border: 4px solid #e7e7e7;
-    background-color: #ddd;
-    color: rgb(116, 142, 216);
-  }
-
   .MuiCardContent-root {
     /* visibility: hidden; */
     color: 'green';
-    width: '30%';
+    /* width: '30%'; */
     font-size: large;
     overflow-wrap: break-word;
+    background-color: #835d16;
     /* white-space: nowrap; */
 
     /* transform: rotate(90); */
@@ -95,16 +133,102 @@
     /* display: inline-flex; */
 
   }
+ .MuiTab-root :hover {
+    border: 4px solid #e7e7e7;
+    background-color: #ddd;
+    color: rgb(116, 142, 216);
+  }
+
+
   
 backup{
   visibility: hidden;
 }
 
+boxy{
+
+  /* visibility: hidden; */
+  position: flex;
+  /* word-wrap: break-word; */
+  white-space: pre-line;
+  text-align: right;
+  word-break: break-all;
+  line-break: loose;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  margin: 10px auto;
+  justify-items: right;
+
+  
+}
 @media screen and (max-width: 600px) {
-  .MuiCard-root{ 
+  /* .MuiGrid-root {
+    padding: 0mm;
+  } */
+  /* .MuiGrid-root{
     visibility: hidden;
-    display: 'flex';
+
+  } */
+
+  .MuiGrid-container {
+    padding: 1;
+    /* visibility: hidden; */
+
   }
+  .MuiCard-root{ 
+    /* visibility: visible; */
+    padding: 1;
+    visibility: visible;
+    /* position: absolute; */
+    /* position: flex; */
+    /* font-size: x-small; */
+
+    /* display: 'flex'; */
+    /* background-color: #c9ad7a; */
+
+    background-color: #835d16;
+
+  }
+
+
+  .MuiCardContent-root{
+    visibility: visible;
+    font-size: x-small;
+    display: inherit;
+    /* background-color: #c9ad7a; */
+    background-color: #835d16;
+    /* position: flex; */
+  }
+  .MuiCardMedia-media{
+    visibility: visible;
+    /* visibility: hidden; */
+
+  }
+  .MuiTabs-root{
+    font-size: x-small;
+    position: flex;
+    /* align-items: stretch; */
+    /* border: 1px solid #e7e7e7; */
+
+    /* width: '100%';
+    height: '100%';
+    max-width: 'initial';
+    max-height: 'initial';
+    margin: 0;
+    top: 0;
+    transform: 'none'; */
+
+    /* flex-direction: column; */
+    /* background-color: #c9ad7a; */
+    /* position: sticky;
+    position: -webkit-sticky;
+    top: 0; */
+  }
+  .MuiButton-label	{
+    font-size: x-small;
+    word-wrap: break-word;;
+  }
+
 
   backup{
     visibility: visible;
@@ -126,16 +250,14 @@ backup{
     font-size: 10;
   }
 
+  
   img {
+    
     max-width: 100%;
     height: auto;
     position: center;
-    /* display: inline-block; */
     float: right;
-    object-fit:scale-down
-
-    /* width: 600px;
-    height: 200px; */
+    object-fit:scale-down;
   }
 
   @media screen and (max-width: 600px) {
@@ -145,6 +267,7 @@ backup{
       /* display: inline-block; */
       float: right;
     }
+
 }
 
   /* .player__button {
@@ -177,7 +300,29 @@ backup{
     text-align: center;
     display: inline-block;
     align-items: center;
+  }
 
+  .minor_tikkun {
+    display: center;
+    position: center;
+    display: inline-block; 
+
+    /* transform: translate(25%, 25%); */
+    /* position: center; */
+    /* text-align: center; */
+    border: 8px solid brown;
+    /* width: 120%; */
+    /* height: 700px;  */
+    /* width: 700px; */
+    padding: 15px 32px; 
+    width: 150%;
+    /* max-width: 150%; */
+    padding: 10px 10px;
+    /* width: 80%; */
+    background-color: brown;
+    /* animation-duration: 2s; */
+    /* animation-name: slidein; */
+    /* align-items: center; */
   }
 
   .flashbro {
@@ -225,13 +370,48 @@ backup{
     /* overflow-y: auto; */
 
   }
+  /* hov:active {
+    /* color: yellow; */
+    /* cursor: none; */
+    /* font-size: 150%; */
+    /* background-color: rgb(13, 20, 6);} */
 
-  fl:hover {
-    color: white;
-    font-size: 150%;
+  hov2 {
+    letter-spacing: .05em;
   }
 
-  
+  hov2:hover {
+    cursor: none; 
+    background-color: rgba(160, 100, 96, 0.527);
+  }
+  vowel {
+    /* color: rgb(143, 216, 79); */
+    /* color: rgb(223, 162, 57); */
+    /* color: rgb(255, 255, 134); */
+    /* color: rgb(255, 255, 255); */
+    color: white;
+
+  }
+
+  fl {
+    /* font-family: 'ShlomosemiStam'; */
+    font-family:  serif;
+    font-size: '2.5vw';
+    cursor: pointer;
+
+  }
+  fl3 {
+    font-family: 'Times';
+  }
+
+  fl:hover {
+    color: rgb(169, 216, 238);
+    /* font-size: 150%; */
+  }
+
+  f2:hover {
+    color: green;
+  }
 
   player {
     display: block;
@@ -246,6 +426,39 @@ backup{
     text-align: center;
     text-decoration: none;
     /* display: inline-block; */
-    font-size: 50px;
+    font-size: 2vw;
     font-family: 'Times New Roman', Times, serif;
   }
+
+  /*Downloaded from https://www.codeseek.co/rbetti/svg-animated-equalizer-icon-POvOdx */
+  #equalizer {position: relative;}
+  #bar1 {animation: bar1 1.2s infinite linear;}
+  #bar2 {animation: bar2 0.8s infinite linear;}
+  #bar3 {animation: bar3 1s infinite linear;}
+  #bar4 {animation: bar4 0.7s infinite linear;}
+  @keyframes bar1 { 0% {height: 2px;}  50% {height: 7px;} 100% {height: 2px;} }
+  @keyframes bar2 {0% {height: 5px;} 40% {height: 1px;} 80% {height: 7px;} 100% {height: 5px;} }
+  @keyframes bar3 {0% {height: 7px;} 50% {height: 0;} 100% {height: 7px;} }
+  @keyframes bar4 { 0% {height: 2px;} 50% {height: 7px;} 100% {height: 2px;} }
+  /* Equalizer*/
+
+
+  /*Downloaded from https://codebrahma.com/how-to-smoothly-render-images-in-react-app/ */
+  .fullSize {width: 100%; height: 100%;}
+  .img-visible {opacity: 1;}
+  .img-hidden {opacity: 0;}
+  .smooth-image-wrapper {width: 100%; height: 100%; position: relative;}
+  .smooth-image { width: 100%; height: 100%;}
+  .smooth-no-image {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 100%; background-color: #be8b8b;
+    text-transform: capitalize;
+  }
+  /* @keyframes preloader-block {from {background-position: 0%, 0;} to {background-position: 170%, 0;}} */
+  .smooth-preloader { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(245, 245, 245, 0.34);}
+  .loader {
+    /* animation: preloader-block 2s linear 0s infinite reverse forwards; */
+    /* background-image: linear-gradient(to right, #c78a8a, #a14343, #aa2525); */
+    background-image: url('/Slides3/loadin.gif'); width: 100%; height: 100%; display: inline-block; background-size: 100%;
+  }
+  /*Smooth images */
